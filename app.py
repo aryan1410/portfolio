@@ -1,5 +1,6 @@
 import streamlit as st
 from PIL import Image
+import base64
 
 # ---------- PAGE CONFIG ---------- #
 st.set_page_config(page_title="Aryan Shah Portfolio", page_icon="💼", layout="centered")
@@ -18,6 +19,14 @@ with st.expander("🏠 Home", expanded=True):
                 systems. Currently, I'm pursuing my Master's in Computer Science at the University of Southern California. While my interest in AI is extensive,
                 I also enjoy working on full-stack solutions, thrive in collaborative environments, and am always eager to explore and implement innovative ideas.""")
     st.markdown("[LinkedIn](https://www.linkedin.com/in/aryanshah1410/) | [GitHub](https://github.com/aryan1410)")
+
+# ------------RESUME-----------#
+with st.expander("My Resume"):
+    with open("assets/ARYAN_SHAH_RESUME.pdf", "rb") as file:
+        base64_pdf = base64.b64encode(file.read()).decode('utf-8')
+        pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="100%" height="800px" type="application/pdf"></iframe>'
+        st.markdown(pdf_display, unsafe_allow_html=True)
+
 
 # ---------- EDUCATION & SKILLS ---------- #
 with st.expander("Education"):
@@ -207,8 +216,12 @@ with st.expander("Personal Projects"):
 # ---------- VOLUNTEERING ---------- #
 with st.expander("Volunteering & Leadership"):
     st.markdown("""
-    - Senior Executive, MUN Society (2021–2022)  
-    Part of the core of a team that researches on current affairs to create study guides for the large number of delegates that will take part in our events. Great way of gaining knowledge and be part of the organising committee of a large scale event.  
+    - MUN Society MPSTME (2020-2022)  
+    Senior Executive (2021-2022)  
+    Led a team that researches on current affairs to create study guides for the large number of delegates that will take part in our events. Great way of gaining knowledge and be part of the organising committee of a large scale event.  
+    Executive (2020-2021)  
+    Worked for the Business development and marketing department. Used self created databases to pitch to various companies, start ups, businesses, etc. to sponsor our events in cash or in kind in return for publicity and exposure deliverables that we offered them. Great way of getting exposure to the corporate world  
+      
     - Member, Rotaract Club (2020–2022)  
     Part of a team of driven people who work tirelessly for the cause "Act for Impact" and aim to give something back to the society through various events such as donation drives, letter distributions and much more.  
     - Executive, Music Committee  
@@ -219,3 +232,8 @@ with st.expander("Volunteering & Leadership"):
     Led a group of volunteers and successfully pulled off an event in my school's annual cultural fest, Immaculata  
     """)
 
+# ---------- CONTACT FORM REDIRECT ---------- #
+with st.expander("Contact", expanded=False):
+    st.markdown("Click the button below to open the contact form.")
+    if st.button("Contact Me"):
+        st.switch_page("pages/contact.py")
