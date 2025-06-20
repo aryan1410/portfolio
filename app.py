@@ -22,10 +22,9 @@ with st.expander("🏠 Home", expanded=True):
 
 # ------------RESUME-----------#
 with st.expander("My Resume"):
-    with open("assets/ARYAN_SHAH_RESUME.pdf", "rb") as file:
-        base64_pdf = base64.b64encode(file.read()).decode('utf-8')
-        pdf_display = f'<iframe src="data:application/pdf;base64,{base64_pdf}" width="100%" height="800px" type="application/pdf"></iframe>'
-        st.markdown(pdf_display, unsafe_allow_html=True)
+    pdf_url = "https://drive.google.com/file/d/1gyjsEHqh90NGqo_kjGjZpcnMvyaaPvec/view?usp=sharing"
+    st.markdown(f'<iframe src="{pdf_url}" width="100%" height="800px"></iframe>', unsafe_allow_html=True)
+
 
 
 # ---------- EDUCATION & SKILLS ---------- #
