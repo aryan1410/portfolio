@@ -45,6 +45,16 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
+st.markdown("""
+    <style>
+    html, body, [class*="st-"] {
+        color: white !important;
+    }
+    .stApp {
+        background-color: transparent;
+    }
+    </style>
+""", unsafe_allow_html=True)
 
 # ---------- BANNER + PROFILE ---------- #
 banner = Image.open("assets/banner.png")
@@ -76,7 +86,7 @@ st.markdown("""
 .carousel-slide {
     display: flex;
     width: 100%;
-    animation: slide 88s linear infinite;
+    animation: slide 40s linear infinite;
     height: 100%;
 }
 .carousel-slide div {
