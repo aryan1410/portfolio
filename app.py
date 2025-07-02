@@ -64,9 +64,9 @@ st.image(banner, use_container_width=True)
 with st.expander("🏠 Home", expanded=True):
     st.title("Aryan Shah")
     st.markdown('<h3 style="font-size: 22px;">Computer Science Grad Student @ USC | ex-NLP Engineer at Elixir Equities</h3>', unsafe_allow_html=True)
-    st.markdown("""Hi, I am a data scientist deeply passionate about artificial intelligence, large language models, neural networks and computer vision.
+    st.markdown("""Hi, I am a data scientist deeply passionate about artificial intelligence, large language models, neural networks, data analysis and statistical models.
                 With a solid foundation from my Bachelor's in Data Science at NMIMS' MPSTME, a wealth of experience as an NLP Engineer,
-                and a handful of personal projects, I've developed a strong interest in the idea of building AI-driven end to end intelligent
+                and a handful of personal projects, I've developed a strong interest in the idea of building AI or data-driven end to end intelligent
                 systems. Currently, I'm pursuing my Master's in Computer Science at the University of Southern California. While my interest in AI is extensive,
                 I also enjoy working on full-stack solutions, thrive in collaborative environments, and am always eager to explore and implement innovative ideas.""")
     st.markdown("[LinkedIn](https://www.linkedin.com/in/aryanshah1410/) | [GitHub](https://github.com/aryan1410)")
