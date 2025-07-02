@@ -116,7 +116,7 @@ st.markdown("""
   <div class="carousel-slide">
     <div>
       <img src="https://raw.githubusercontent.com/aryan1410/portfolio/master/assets/little_go.png">
-      <h4>Little Go AI Agents</h4>
+      <h4>Game Playing Agents</h4>
     </div>
     <div>
       <img src="https://raw.githubusercontent.com/aryan1410/portfolio/master/assets/expression_music.png">
