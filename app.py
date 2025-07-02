@@ -1,12 +1,53 @@
 import streamlit as st
 from PIL import Image
 import base64
+import random
+import time
+import os
+from streamlit.components.v1 import html
+
+def image_to_base64(path):
+    with open(path, "rb") as f:
+        return base64.b64encode(f.read()).decode("utf-8")
+
 
 # ---------- PAGE CONFIG ---------- #
 st.set_page_config(page_title="Aryan Shah Portfolio", page_icon="💼", layout="centered")
 
+st.markdown("""
+    <style>
+    .stButton > button {
+        transition: all 0.2s ease;
+        border-radius: 10px;
+    }
+    .stButton > button:hover {
+        transform: scale(1.05);
+        background-color: #f0f0f0;
+    }
+    .st-expanderHeader {
+        transition: all 0.2s ease;
+    }
+    .st-expanderHeader:hover {
+        background-color: #fafafa;
+        transform: scale(1.01);
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+
+st.markdown("""
+    <style>
+    .stApp {
+        background-image: url("https://img.freepik.com/free-vector/abstract-black-lines-geometric-background_677411-2748.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+
 # ---------- BANNER + PROFILE ---------- #
-banner = Image.open("assets/banner.png")  # Make sure this file exists in your directory
+banner = Image.open("assets/banner.png")
 st.image(banner, use_container_width=True)
 
 # ---------- HOME ---------- #
@@ -20,12 +61,94 @@ with st.expander("🏠 Home", expanded=True):
                 I also enjoy working on full-stack solutions, thrive in collaborative environments, and am always eager to explore and implement innovative ideas.""")
     st.markdown("[LinkedIn](https://www.linkedin.com/in/aryanshah1410/) | [GitHub](https://github.com/aryan1410)")
 
-# ------------RESUME-----------#
-with st.expander("My Resume"):
-    pdf_url = "https://drive.google.com/file/d/1Kei8NHw893JSJ85MO4pXQco86v5FfHYb/view?usp=sharing"
-    st.markdown(f'<iframe src="{pdf_url}" width="100%" height="800px"></iframe>', unsafe_allow_html=True)
+# ---------- AUTOMATED SLIDESHOW ---------- #
+st.title("Featured")
+st.markdown("""
+<style>
+.carousel-container {
+    width: 100%;
+    max-width: 720px;
+    margin: 0 auto 2rem;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.carousel-slide {
+    display: flex;
+    width: 100%;
+    animation: slide 88s linear infinite;
+    height: 100%;
+}
+.carousel-slide div {
+    flex: 1 0 100%;
+    text-align: center;
+    padding: 20px;
+}
+.carousel-slide img {
+    width: 100%;
+    height: 100%
+    object-fit: cover;
+    border-radius: 10px;
+}
+@keyframes slide {
+    0% { transform: translateX(0%); }
+    11.25% { transform: translateX(0%); }
+    12.5% { transform: translateX(-100%); }
+    23.75% { transform: translateX(-100%); }
+    25% { transform: translateX(-200%); }
+    36.25% { transform: translateX(-200%); }
+    37.5% { transform: translateX(-300%); }
+    48.75% { transform: translateX(-300%); }
+    50% { transform: translateX(-400%); }
+    61.25% { transform: translateX(-400%); }
+    62.5% { transform: translateX(-500%); }
+    73.75% { transform: translateX(-500%); }
+    75% { transform: translateX(-600%); }
+    86.25% { transform: translateX(-600%); }
+    87.5% { transform: translateX(-700%); }
+    98.75% { transform: translateX(-700%); }
+    100% { transform: translateX(0%); }
+}
 
+</style>
 
+<div class="carousel-container">
+  <div class="carousel-slide">
+    <div>
+      <img src="https://raw.githubusercontent.com/aryan1410/portfolio/master/assets/little_go.png">
+      <h4>Little Go AI Agents</h4>
+    </div>
+    <div>
+      <img src="https://raw.githubusercontent.com/aryan1410/portfolio/master/assets/expression_music.png">
+      <h4>Emotion-Based Music Recommender</h4>
+    </div>
+    <div>
+      <img src="https://raw.githubusercontent.com/aryan1410/portfolio/master/assets/pedestrian.png">
+      <h4>Pedestrian Detection</h4>
+    </div>
+    <div>
+      <img src="https://raw.githubusercontent.com/aryan1410/portfolio/master/assets/viterbi.png">
+      <h4>Viterbi Temporal Reasoning</h4>
+    </div>
+    <div>
+      <img src="https://raw.githubusercontent.com/aryan1410/portfolio/master/assets/memory.png">
+      <h4>Sequence Alignment</h4>
+    </div>
+    <div>
+      <img src="https://raw.githubusercontent.com/aryan1410/portfolio/master/assets/elixir.png">
+      <h4>NLP Engineer @ Elixir</h4>
+    </div>
+    <div>
+      <img src="https://raw.githubusercontent.com/aryan1410/portfolio/master/assets/USC-viterbi.png">
+      <h4>Research Assistant @ USC</h4>
+    </div>
+    <div>
+      <img src="https://raw.githubusercontent.com/aryan1410/portfolio/master/assets/organic.png">
+      <h4>Business Analyst Intern</h4>
+    </div>
+  </div>
+</div>
+""", unsafe_allow_html=True)
 
 # ---------- EDUCATION & SKILLS ---------- #
 with st.expander("Education"):
