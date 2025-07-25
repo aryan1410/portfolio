@@ -351,17 +351,16 @@ with st.expander("Personal Projects"):
     
     st.markdown('<h3 style="font-size: 20px;">Confused Student Simulator</h3>',unsafe_allow_html=True)
     st.image("assets/confusion.png")
-    st.markdown(""""A conversational AI that mimics a confused yet intelligent student, generating naive or follow-up questions from lecture materials
+    st.markdown("""A conversational AI that mimics a confused yet intelligent student, generating naive or follow-up questions from lecture materials
     (text, PDFs, videos, YouTube links). It uses LLMs and ASR to simulate misunderstandings and engage users in a five-turn dialogue, helping
-    identify gaps in clarity. Built with Gemini API, Whisper, and Streamlit, it supports multiple input formats and maintains conversational context.
-    Applications:
-    - Lecture debugging before delivery
-    - TA preparation and FAQ generation
-    - Self-study companion for learners
-    - Screening educational content for ambiguity
-    - Research on AI-simulated learning behavior
-    - Improving clarity in online courses and videos
-
+    identify gaps in clarity. Built with Gemini API, Whisper, and Streamlit, it supports multiple input formats and maintains conversational context.  
+    Applications:  
+    - Lecture debugging before delivery  
+    - TA preparation and FAQ generation  
+    - Self-study companion for learners  
+    - Screening educational content for ambiguity  
+    - Research on AI-simulated learning behavior  
+    - Improving clarity in online courses and videos  
     For more information, visit the [GitHub repo](https://github.com/aryan1410/confused_student_simulator).
     """)
 
